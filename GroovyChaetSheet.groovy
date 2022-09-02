@@ -1,19 +1,16 @@
-('${#TestCase#name}') // property of case
+('${#TestCase#property}') // property of case
 ("id") //property
-["getEmployeeDetails TestCase"] // test case or step name
+["Name TestCase"] // test case or step name
 
 log.info "Hello world" // výpis do konzole
 
 context //context varible is used to access and modify the properties of your test case. Avaliable only in test case only.
 
-context.expand('${#TestCase#name}') //přístip k properties na úrovni daného casu
-context.expand('${#TestCase#age}')
+context.expand('${#TestCase#property}') //přístip k properties na úrovni daného casu
 
 testRunner.testCase.testSuite.testCases["getEmployeeDetails TestCase"].getPropertyValue("id") // přístup k properties jiného test casu
-estRunner.testCase.testSuite.testCases["addEmployee TestCase"].getPropertyValue("age") 
 
 testRunner.testCase.testSuite.testCases["getEmployeeDetails TestCase"].setPropertyValue("id","666") // setting property value in test case
-testRunner.testCase.testSuite.testCases["getEmployeeDetails TestCase"].getPropertyValue("id") // přístup k properties jiného test casu
 
 testRunner.testCase.getPropertyValue("department") // přístup k properties test casu
 
